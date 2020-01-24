@@ -1,0 +1,28 @@
+apply plugin: 'java'
+
+dependencies {
+    //local file
+    compile files('lib/dl.jar')
+    compile files('lib/tmutils.jar')
+compile files('lib/bl.jar')
+compile files('../../../itext/')
+compile fileTree(dir: 'lib', include: '*.jar')
+}
+
+sourceSets {
+   main {
+      java {
+         srcDir 'src'
+         
+      }
+   }
+
+
+   test {
+      java {
+         srcDir 'test'
+      }
+   }
+}
+sourceSets.main.resources.srcDirs = [ "icons/" ]
+sourceSets.main.resources.includes = [ "**/*.png" ]
